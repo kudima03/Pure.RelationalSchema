@@ -8,8 +8,8 @@ namespace Pure.RelationalSchema.Schema;
 public sealed record Schema : ISchema
 {
     public Schema(
-        IString name, 
-        IEnumerable<ITable> tables, 
+        IString name,
+        IEnumerable<ITable> tables,
         IEnumerable<IForeignKey> foreignKeys)
     {
         Name = name;

@@ -17,8 +17,8 @@ namespace Pure.RelationalSchema.Tests.Schema;
 using Column = RelationalSchema.Column.Column;
 using ForeignKey = RelationalSchema.ForeignKey.ForeignKey;
 using Index = RelationalSchema.Index.Index;
-using Table = RelationalSchema.Table.Table;
 using Schema = RelationalSchema.Schema.Schema;
+using Table = RelationalSchema.Table.Table;
 
 public sealed record SchemaTests
 {
