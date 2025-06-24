@@ -1,0 +1,28 @@
+﻿using Pure.Primitives.Materialized.String;
+using Pure.RelationalSchema.Abstractions.ColumnType;
+using Pure.RelationalSchema.ColumnType;
+
+namespace Pure.RelationalSchema.Tests.ColumnType;
+
+public sealed record DateColumnTypeTests
+{
+    [Fact]
+    public void ContainCorrectTypeName()
+    {
+        const string expectedTypeName = "date";
+        IColumnType columnType = new DateColumnType();
+        Assert.Equal(expectedTypeName, new MaterializedString(columnType.Name).Value);
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnGetHashCode()
+    {
+        Assert.Throws<NotSupportedException>(() => new DateColumnType().GetHashCode());
+    }
+
+    [Fact]
+    public void ThrowsExceptionOnToString()
+    {
+        Assert.Throws<NotSupportedException>(() => new DateColumnType().ToString());
+    }
+}
