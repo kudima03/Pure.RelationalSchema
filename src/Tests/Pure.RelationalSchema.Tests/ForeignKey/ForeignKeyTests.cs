@@ -158,6 +158,10 @@ public sealed record ForeignKeyTests
     [Fact]
     public void ThrowsExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new Table(new RandomString(new UShort(10)), [], []).ToString());
+        Assert.Throws<NotSupportedException>(() => new ForeignKey(
+            new Table(new EmptyString(), [], []),
+            new Column(new EmptyString(), new DateColumnType()),
+            new Table(new EmptyString(), [], []),
+            new Column(new EmptyString(), new TimeColumnType())).ToString());
     }
 }
