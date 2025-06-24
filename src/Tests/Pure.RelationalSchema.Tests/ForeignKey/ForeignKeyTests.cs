@@ -14,9 +14,9 @@ using Pure.RelationalSchema.Tests.EqualityComparers;
 namespace Pure.RelationalSchema.Tests.ForeignKey;
 
 using Column = RelationalSchema.Column.Column;
+using ForeignKey = RelationalSchema.ForeignKey.ForeignKey;
 using Index = RelationalSchema.Index.Index;
 using Table = RelationalSchema.Table.Table;
-using ForeignKey = RelationalSchema.ForeignKey.ForeignKey;
 
 
 public sealed record ForeignKeyTests

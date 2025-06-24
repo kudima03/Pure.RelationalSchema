@@ -7,9 +7,9 @@ namespace Pure.RelationalSchema.ForeignKey;
 public sealed record ForeignKey : IForeignKey
 {
     public ForeignKey(
-        ITable referencingTable, 
-        IColumn referencingColumn, 
-        ITable referencedTable, 
+        ITable referencingTable,
+        IColumn referencingColumn,
+        ITable referencedTable,
         IColumn referencedColumn)
     {
         ReferencingTable = referencingTable;
