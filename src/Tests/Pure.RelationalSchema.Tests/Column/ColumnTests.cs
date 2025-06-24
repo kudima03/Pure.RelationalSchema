@@ -6,6 +6,7 @@ using Pure.Primitives.String;
 using Pure.RelationalSchema.Abstractions.Column;
 using Pure.RelationalSchema.Abstractions.ColumnType;
 using Pure.RelationalSchema.ColumnType;
+using Pure.RelationalSchema.Tests.EqualityComparers;
 
 namespace Pure.RelationalSchema.Tests.Column;
 
@@ -18,7 +19,7 @@ public sealed record ColumnTests
     {
         IColumnType expectedType = new TimeColumnType();
         IColumn column = new Column(new EmptyString(), expectedType);
-        Assert.Equal(new MaterializedString(expectedType.Name).Value, new MaterializedString(column.Type.Name).Value);
+        Assert.Equal(expectedType, column.Type, new ColumnTypeEqualityComparer());
     }
 
     [Fact]
