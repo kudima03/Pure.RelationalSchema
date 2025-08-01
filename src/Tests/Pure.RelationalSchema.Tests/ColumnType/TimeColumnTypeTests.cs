@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Materialized.String;
+using Pure.Primitives.Materialized.String;
 using Pure.RelationalSchema.Abstractions.ColumnType;
 using Pure.RelationalSchema.ColumnType;
 
@@ -17,12 +17,14 @@ public sealed record TimeColumnTypeTests
     [Fact]
     public void ThrowsExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new TimeColumnType().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new TimeColumnType().GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowsExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new TimeColumnType().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new TimeColumnType().ToString());
     }
 }

@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.String;
+using Pure.Primitives.Abstractions.String;
 using Pure.RelationalSchema.Abstractions.ColumnType;
 using String = Pure.Primitives.String.String;
 
