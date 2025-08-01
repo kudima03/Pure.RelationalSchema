@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Abstractions.String;
+using Pure.Primitives.Abstractions.String;
 using Pure.RelationalSchema.Abstractions.ForeignKey;
 using Pure.RelationalSchema.Abstractions.Schema;
 using Pure.RelationalSchema.Abstractions.Table;
@@ -10,7 +10,8 @@ public sealed record Schema : ISchema
     public Schema(
         IString name,
         IEnumerable<ITable> tables,
-        IEnumerable<IForeignKey> foreignKeys)
+        IEnumerable<IForeignKey> foreignKeys
+    )
     {
         Name = name;
         Tables = tables;

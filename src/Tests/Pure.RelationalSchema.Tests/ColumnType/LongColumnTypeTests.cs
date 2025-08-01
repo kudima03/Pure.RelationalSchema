@@ -1,4 +1,4 @@
-﻿using Pure.Primitives.Materialized.String;
+using Pure.Primitives.Materialized.String;
 using Pure.RelationalSchema.Abstractions.ColumnType;
 using Pure.RelationalSchema.ColumnType;
 
@@ -17,12 +17,14 @@ public sealed record LongColumnTypeTests
     [Fact]
     public void ThrowsExceptionOnGetHashCode()
     {
-        Assert.Throws<NotSupportedException>(() => new LongColumnType().GetHashCode());
+        _ = Assert.Throws<NotSupportedException>(() =>
+            new LongColumnType().GetHashCode()
+        );
     }
 
     [Fact]
     public void ThrowsExceptionOnToString()
     {
-        Assert.Throws<NotSupportedException>(() => new LongColumnType().ToString());
+        _ = Assert.Throws<NotSupportedException>(() => new LongColumnType().ToString());
     }
 }

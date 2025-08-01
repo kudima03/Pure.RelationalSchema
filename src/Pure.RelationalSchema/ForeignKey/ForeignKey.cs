@@ -1,4 +1,4 @@
-﻿using Pure.RelationalSchema.Abstractions.Column;
+using Pure.RelationalSchema.Abstractions.Column;
 using Pure.RelationalSchema.Abstractions.ForeignKey;
 using Pure.RelationalSchema.Abstractions.Table;
 
@@ -10,7 +10,8 @@ public sealed record ForeignKey : IForeignKey
         ITable referencingTable,
         IColumn referencingColumn,
         ITable referencedTable,
-        IColumn referencedColumn)
+        IColumn referencedColumn
+    )
     {
         ReferencingTable = referencingTable;
         ReferencingColumn = referencingColumn;
