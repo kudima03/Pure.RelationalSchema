@@ -6,7 +6,7 @@ namespace Pure.RelationalSchema.ColumnType;
 
 public sealed record TimeColumnType : IColumnType
 {
-    IString IColumnType.Name { get; } = new String("time");
+    public IString Name { get; } = new String("time");
 
     public override int GetHashCode()
     {

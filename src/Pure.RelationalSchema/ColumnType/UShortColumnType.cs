@@ -6,7 +6,7 @@ namespace Pure.RelationalSchema.ColumnType;
 
 public sealed record UShortColumnType : IColumnType
 {
-    IString IColumnType.Name { get; } = new String("ushort");
+    public IString Name { get; } = new String("ushort");
 
     public override int GetHashCode()
     {
