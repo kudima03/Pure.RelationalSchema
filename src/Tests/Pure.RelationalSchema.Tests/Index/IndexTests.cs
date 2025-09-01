@@ -1,12 +1,11 @@
+using Pure.Primitives.Abstractions.Bool;
 using Pure.Primitives.Bool;
 using Pure.Primitives.Materialized.Bool;
-using Pure.Primitives.Number;
-using Pure.Primitives.Random.String;
+using Pure.Primitives.Random.Bool;
 using Pure.RelationalSchema.Abstractions.Column;
 using Pure.RelationalSchema.Abstractions.Index;
-using Pure.RelationalSchema.ColumnType;
+using Pure.RelationalSchema.Random;
 using Pure.RelationalSchema.Tests.EqualityComparers;
-using _Column = Pure.RelationalSchema.Column.Column;
 using _Index = Pure.RelationalSchema.Index.Index;
 
 namespace Pure.RelationalSchema.Tests.Index;
@@ -16,20 +15,15 @@ public sealed record IndexTests
     [Fact]
     public void InitializeIsUnique()
     {
-        IIndex index = new _Index(new True(), []);
-        Assert.True(new MaterializedBool(index.IsUnique).Value);
+        IBool uniqueness = new RandomBool();
+        IIndex index = new _Index(uniqueness, []);
+        Assert.Equal(new MaterializedBool(uniqueness).Value, new MaterializedBool(index.IsUnique).Value);
     }
 
     [Fact]
     public void InitializeColumns()
     {
-        IReadOnlyCollection<IColumn> columns =
-        [
-            new _Column(new RandomString(new UShort(10)), new DateColumnType()),
-            new _Column(new RandomString(new UShort(10)), new StringColumnType()),
-            new _Column(new RandomString(new UShort(10)), new IntColumnType()),
-            new _Column(new RandomString(new UShort(10)), new LongColumnType()),
-        ];
+        IEnumerable<IColumn> columns = new RandomColumnsCollection();
 
         IIndex index = new _Index(new True(), columns);
 
@@ -40,7 +34,7 @@ public sealed record IndexTests
     public void ThrowsExceptionOnGetHashCode()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Index(new False(), []).GetHashCode()
+            new _Index(new RandomBool(), new RandomColumnsCollection()).GetHashCode()
         );
     }
 
@@ -48,7 +42,7 @@ public sealed record IndexTests
     public void ThrowsExceptionOnToString()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Index(new True(), []).ToString()
+            new _Index(new RandomBool(), new RandomColumnsCollection()).ToString()
         );
     }
 }
