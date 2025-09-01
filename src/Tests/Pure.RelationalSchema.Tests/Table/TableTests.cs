@@ -29,7 +29,11 @@ public sealed record TableTests
     {
         IEnumerable<IColumn> columns = new RandomColumnsCollection();
 
-        ITable table = new _Table(new RandomString(), columns, new RandomIndexesCollection());
+        ITable table = new _Table(
+            new RandomString(),
+            columns,
+            new RandomIndexesCollection()
+        );
         Assert.Equal(table.Columns, columns, new ColumnEqualityComparer());
     }
 
@@ -38,7 +42,11 @@ public sealed record TableTests
     {
         IEnumerable<IIndex> indexes = new RandomIndexesCollection();
 
-        ITable table = new _Table(new RandomString(), new RandomColumnsCollection(), indexes);
+        ITable table = new _Table(
+            new RandomString(),
+            new RandomColumnsCollection(),
+            indexes
+        );
 
         Assert.Equal(table.Indexes, indexes, new IndexEqualityComparer());
     }
@@ -47,7 +55,11 @@ public sealed record TableTests
     public void ThrowsExceptionOnGetHashCode()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Table(new RandomString(), new RandomColumnsCollection(), new RandomIndexesCollection()).GetHashCode()
+            new _Table(
+                new RandomString(),
+                new RandomColumnsCollection(),
+                new RandomIndexesCollection()
+            ).GetHashCode()
         );
     }
 
@@ -55,7 +67,11 @@ public sealed record TableTests
     public void ThrowsExceptionOnToString()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Table(new RandomString(), new RandomColumnsCollection(), new RandomIndexesCollection()).ToString()
+            new _Table(
+                new RandomString(),
+                new RandomColumnsCollection(),
+                new RandomIndexesCollection()
+            ).ToString()
         );
     }
 }

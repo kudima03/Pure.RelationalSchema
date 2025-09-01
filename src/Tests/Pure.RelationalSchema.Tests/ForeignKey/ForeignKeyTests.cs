@@ -12,9 +12,13 @@ public sealed record ForeignKeyTests
     [Fact]
     public void InitializeReferencedColumn()
     {
-        ITable referencingTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencingTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
-        ITable referencedTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencedTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,
@@ -33,9 +37,13 @@ public sealed record ForeignKeyTests
     [Fact]
     public void InitializeReferencingColumn()
     {
-        ITable referencingTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencingTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
-        ITable referencedTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencedTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,
@@ -54,9 +62,13 @@ public sealed record ForeignKeyTests
     [Fact]
     public void InitializeReferencedTable()
     {
-        ITable referencingTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencingTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
-        ITable referencedTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencedTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,
@@ -75,9 +87,13 @@ public sealed record ForeignKeyTests
     [Fact]
     public void InitializeReferencingTable()
     {
-        ITable referencingTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencingTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
-        ITable referencedTable = new RandomTable(new RandomColumnsCollection(new UShort(1)));
+        ITable referencedTable = new RandomTable(
+            new RandomColumnsCollection(new UShort(1))
+        );
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,

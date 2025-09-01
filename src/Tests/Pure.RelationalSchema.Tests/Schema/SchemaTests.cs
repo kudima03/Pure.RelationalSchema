@@ -29,7 +29,11 @@ public sealed record SchemaTests
     {
         IEnumerable<IForeignKey> foreignKeys = new RandomForeignKeysCollection();
 
-        ISchema schema = new _Schema(new RandomString(), new RandomTablesCollection(), foreignKeys);
+        ISchema schema = new _Schema(
+            new RandomString(),
+            new RandomTablesCollection(),
+            foreignKeys
+        );
 
         Assert.Equal(foreignKeys, schema.ForeignKeys, new ForeignKeyEqualityComparer());
     }
@@ -39,7 +43,11 @@ public sealed record SchemaTests
     {
         IEnumerable<ITable> tables = new RandomTablesCollection();
 
-        ISchema schema = new _Schema(new RandomString(), tables, new RandomForeignKeysCollection());
+        ISchema schema = new _Schema(
+            new RandomString(),
+            tables,
+            new RandomForeignKeysCollection()
+        );
 
         Assert.Equal(tables, schema.Tables, new TableEqualityComparer());
     }
@@ -48,7 +56,11 @@ public sealed record SchemaTests
     public void ThrowsExceptionOnGetHashCode()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Schema(new RandomString(), new RandomTablesCollection(), new RandomForeignKeysCollection()).GetHashCode()
+            new _Schema(
+                new RandomString(),
+                new RandomTablesCollection(),
+                new RandomForeignKeysCollection()
+            ).GetHashCode()
         );
     }
 
@@ -56,7 +68,11 @@ public sealed record SchemaTests
     public void ThrowsExceptionOnToString()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Schema(new RandomString(), new RandomTablesCollection(), new RandomForeignKeysCollection()).ToString()
+            new _Schema(
+                new RandomString(),
+                new RandomTablesCollection(),
+                new RandomForeignKeysCollection()
+            ).ToString()
         );
     }
 }
