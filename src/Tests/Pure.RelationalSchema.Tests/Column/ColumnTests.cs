@@ -2,10 +2,9 @@ using Pure.Primitives.Abstractions.String;
 using Pure.Primitives.Materialized.String;
 using Pure.Primitives.Number;
 using Pure.Primitives.Random.String;
-using Pure.Primitives.String;
 using Pure.RelationalSchema.Abstractions.Column;
 using Pure.RelationalSchema.Abstractions.ColumnType;
-using Pure.RelationalSchema.ColumnType;
+using Pure.RelationalSchema.Random;
 using Pure.RelationalSchema.Tests.EqualityComparers;
 using _Column = Pure.RelationalSchema.Column.Column;
 
@@ -16,8 +15,8 @@ public sealed record ColumnTests
     [Fact]
     public void InitializeType()
     {
-        IColumnType expectedType = new TimeColumnType();
-        IColumn column = new _Column(new EmptyString(), expectedType);
+        IColumnType expectedType = new RandomColumnType();
+        IColumn column = new _Column(new RandomString(), expectedType);
         Assert.Equal(expectedType, column.Type, new ColumnTypeEqualityComparer());
     }
 
@@ -25,7 +24,7 @@ public sealed record ColumnTests
     public void InitializeName()
     {
         IString expectedTypeName = new RandomString(new UShort(10));
-        IColumn column = new _Column(expectedTypeName, new TimeColumnType());
+        IColumn column = new _Column(expectedTypeName, new RandomColumnType());
         Assert.Equal(
             new MaterializedString(expectedTypeName).Value,
             new MaterializedString(column.Name).Value
@@ -36,7 +35,7 @@ public sealed record ColumnTests
     public void ThrowsExceptionOnGetHashCode()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Column(new EmptyString(), new DateColumnType()).GetHashCode()
+            new _Column(new RandomString(), new RandomColumnType()).GetHashCode()
         );
     }
 
@@ -44,7 +43,7 @@ public sealed record ColumnTests
     public void ThrowsExceptionOnToString()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new _Column(new EmptyString(), new TimeColumnType()).ToString()
+            new _Column(new RandomString(), new RandomColumnType()).ToString()
         );
     }
 }
