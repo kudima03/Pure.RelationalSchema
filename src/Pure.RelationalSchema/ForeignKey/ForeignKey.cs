@@ -8,24 +8,24 @@ public sealed record ForeignKey : IForeignKey
 {
     public ForeignKey(
         ITable referencingTable,
-        IColumn referencingColumn,
+        IEnumerable<IColumn> referencingColumns,
         ITable referencedTable,
-        IColumn referencedColumn
+        IEnumerable<IColumn> referencedColumns
     )
     {
         ReferencingTable = referencingTable;
-        ReferencingColumn = referencingColumn;
+        ReferencingColumns = referencingColumns;
         ReferencedTable = referencedTable;
-        ReferencedColumn = referencedColumn;
+        ReferencedColumns = referencedColumns;
     }
 
     public ITable ReferencingTable { get; }
 
-    public IColumn ReferencingColumn { get; }
+    public IEnumerable<IColumn> ReferencingColumns { get; }
 
     public ITable ReferencedTable { get; }
 
-    public IColumn ReferencedColumn { get; }
+    public IEnumerable<IColumn> ReferencedColumns { get; }
 
     public override int GetHashCode()
     {
