@@ -22,14 +22,14 @@ public sealed record ForeignKeyTests
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,
-            referencingTable.Columns.First(),
+            [referencingTable.Columns.First()],
             referencedTable,
-            referencedTable.Columns.First()
+            [referencedTable.Columns.First()]
         );
 
         Assert.Equal(
             referencedTable.Columns.First(),
-            foreignKey.ReferencedColumn,
+            foreignKey.ReferencedColumns.First(),
             new ColumnEqualityComparer()
         );
     }
@@ -47,14 +47,14 @@ public sealed record ForeignKeyTests
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,
-            referencingTable.Columns.First(),
+            [referencingTable.Columns.First()],
             referencedTable,
-            referencedTable.Columns.First()
+            [referencedTable.Columns.First()]
         );
 
         Assert.Equal(
             referencingTable.Columns.First(),
-            foreignKey.ReferencingColumn,
+            foreignKey.ReferencingColumns.First(),
             new ColumnEqualityComparer()
         );
     }
@@ -72,9 +72,9 @@ public sealed record ForeignKeyTests
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,
-            referencingTable.Columns.First(),
+            [referencingTable.Columns.First()],
             referencedTable,
-            referencedTable.Columns.First()
+            [referencedTable.Columns.First()]
         );
 
         Assert.Equal(
@@ -97,9 +97,9 @@ public sealed record ForeignKeyTests
 
         IForeignKey foreignKey = new _ForeignKey(
             referencingTable,
-            referencingTable.Columns.First(),
+            [referencingTable.Columns.First()],
             referencedTable,
-            referencedTable.Columns.First()
+            [referencedTable.Columns.First()]
         );
 
         Assert.Equal(
@@ -115,9 +115,9 @@ public sealed record ForeignKeyTests
         _ = Assert.Throws<NotSupportedException>(() =>
             new _ForeignKey(
                 new RandomTable(),
-                new RandomColumn(),
+                [new RandomColumn()],
                 new RandomTable(),
-                new RandomColumn()
+                [new RandomColumn()]
             ).GetHashCode()
         );
     }
@@ -128,9 +128,9 @@ public sealed record ForeignKeyTests
         _ = Assert.Throws<NotSupportedException>(() =>
             new _ForeignKey(
                 new RandomTable(),
-                new RandomColumn(),
+                [new RandomColumn()],
                 new RandomTable(),
-                new RandomColumn()
+                [new RandomColumn()]
             ).ToString()
         );
     }
