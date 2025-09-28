@@ -28,7 +28,7 @@ public sealed record RowDeterminedHashColumnTests
     public void ThrowsExceptionOnGetHashCode()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new DeterminedHashColumnType().GetHashCode()
+            new RowDeterminedHashColumn().GetHashCode()
         );
     }
 
@@ -36,7 +36,7 @@ public sealed record RowDeterminedHashColumnTests
     public void ThrowsExceptionOnToString()
     {
         _ = Assert.Throws<NotSupportedException>(() =>
-            new DeterminedHashColumnType().ToString()
+            new RowDeterminedHashColumn().ToString()
         );
     }
 }
