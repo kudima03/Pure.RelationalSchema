@@ -6,8 +6,7 @@ public sealed record IndexEqualityComparer : IEqualityComparer<IIndex>
 {
     public bool Equals(IIndex? column, IIndex? column1)
     {
-        return new MaterializedBool(column!.IsUnique).Value
-                == new MaterializedBool(column1!.IsUnique).Value
+        return column!.IsUnique.BoolValue == column1!.IsUnique.BoolValue
             && column.Columns.SequenceEqual(
                 column1.Columns,
                 new ColumnEqualityComparer()

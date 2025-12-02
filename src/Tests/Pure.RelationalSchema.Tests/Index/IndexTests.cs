@@ -16,10 +16,7 @@ public sealed record IndexTests
     {
         IBool uniqueness = new RandomBool();
         IIndex index = new _Index(uniqueness, []);
-        Assert.Equal(
-            new MaterializedBool(uniqueness).Value,
-            new MaterializedBool(index.IsUnique).Value
-        );
+        Assert.Equal(uniqueness.BoolValue, index.IsUnique.BoolValue);
     }
 
     [Fact]

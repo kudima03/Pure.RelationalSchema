@@ -10,7 +10,7 @@ public sealed record TimeColumnTypeTests
     {
         const string expectedTypeName = "time";
         IColumnType columnType = new TimeColumnType();
-        Assert.Equal(expectedTypeName, new MaterializedString(columnType.Name).Value);
+        Assert.Equal(expectedTypeName, columnType.Name.TextValue);
     }
 
     [Fact]

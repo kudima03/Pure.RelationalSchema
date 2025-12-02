@@ -10,7 +10,7 @@ public sealed record ULongColumnTypeTests
     {
         const string expectedTypeName = "ulong";
         IColumnType columnType = new ULongColumnType();
-        Assert.Equal(expectedTypeName, new MaterializedString(columnType.Name).Value);
+        Assert.Equal(expectedTypeName, columnType.Name.TextValue);
     }
 
     [Fact]

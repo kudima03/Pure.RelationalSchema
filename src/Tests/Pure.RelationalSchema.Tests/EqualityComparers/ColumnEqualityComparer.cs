@@ -6,10 +6,8 @@ public sealed record ColumnEqualityComparer : IEqualityComparer<IColumn>
 {
     public bool Equals(IColumn? column, IColumn? column1)
     {
-        return new MaterializedString(column!.Name).Value
-                == new MaterializedString(column1!.Name).Value
-            && new MaterializedString(column.Type.Name).Value
-                == new MaterializedString(column1.Type.Name).Value;
+        return column!.Name.TextValue == column1!.Name.TextValue
+            && column.Type.Name.TextValue == column1.Type.Name.TextValue;
     }
 
     public int GetHashCode(IColumn obj)
