@@ -1,4 +1,3 @@
-using Pure.Primitives.Materialized.Bool;
 using Pure.RelationalSchema.Abstractions.Index;
 
 namespace Pure.RelationalSchema.Tests.EqualityComparers;

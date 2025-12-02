@@ -1,4 +1,3 @@
-using Pure.Primitives.Materialized.String;
 using Pure.RelationalSchema.Abstractions.Column;
 
 namespace Pure.RelationalSchema.Tests.EqualityComparers;

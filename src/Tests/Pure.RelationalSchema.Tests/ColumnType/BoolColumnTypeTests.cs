@@ -1,4 +1,3 @@
-using Pure.Primitives.Materialized.String;
 using Pure.RelationalSchema.Abstractions.ColumnType;
 using Pure.RelationalSchema.ColumnType;
 
@@ -11,7 +10,7 @@ public sealed record BoolColumnTypeTests
     {
         const string expectedTypeName = "bool";
         IColumnType columnType = new BoolColumnType();
-        Assert.Equal(expectedTypeName, new MaterializedString(columnType.Name).Value);
+        Assert.Equal(expectedTypeName, columnType.Name.TextValue);
     }
 
     [Fact]

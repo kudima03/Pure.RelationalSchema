@@ -1,5 +1,4 @@
 using Pure.Primitives.Abstractions.String;
-using Pure.Primitives.Materialized.String;
 using Pure.Primitives.Number;
 using Pure.Primitives.Random.String;
 using Pure.RelationalSchema.Abstractions.Column;

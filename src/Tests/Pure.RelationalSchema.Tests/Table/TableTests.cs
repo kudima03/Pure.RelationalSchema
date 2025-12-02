@@ -1,5 +1,4 @@
 using Pure.Primitives.Abstractions.String;
-using Pure.Primitives.Materialized.String;
 using Pure.Primitives.Number;
 using Pure.Primitives.Random.String;
 using Pure.RelationalSchema.Abstractions.Column;
@@ -18,10 +17,7 @@ public sealed record TableTests
     {
         IString expectedName = new RandomString(new UShort(10));
         ITable table = new _Table(expectedName, [], []);
-        Assert.Equal(
-            new MaterializedString(expectedName).Value,
-            new MaterializedString(table.Name).Value
-        );
+        Assert.Equal(expectedName.TextValue, table.Name.TextValue);
     }
 
     [Fact]

@@ -1,4 +1,3 @@
-using Pure.Primitives.Materialized.String;
 using Pure.RelationalSchema.Abstractions.ColumnType;
 using Pure.RelationalSchema.ColumnType;
 
