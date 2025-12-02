@@ -1,4 +1,3 @@
-using Pure.Primitives.Materialized.String;
 using Pure.RelationalSchema.Abstractions.Column;
 using Pure.RelationalSchema.Abstractions.ColumnType;
 using Pure.RelationalSchema.Column;
@@ -21,7 +20,7 @@ public sealed record RowDeterminedHashColumnTests
     public void InitializeName()
     {
         IColumn column = new RowDeterminedHashColumn();
-        Assert.Equal("determined_hash_column", new MaterializedString(column.Name).Value);
+        Assert.Equal("determined_hash_column", column.Name.TextValue);
     }
 
     [Fact]

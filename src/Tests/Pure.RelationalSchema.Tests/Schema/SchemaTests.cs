@@ -1,5 +1,4 @@
 using Pure.Primitives.Abstractions.String;
-using Pure.Primitives.Materialized.String;
 using Pure.Primitives.Number;
 using Pure.Primitives.Random.String;
 using Pure.RelationalSchema.Abstractions.ForeignKey;
@@ -18,10 +17,7 @@ public sealed record SchemaTests
     {
         IString expectedName = new RandomString(new UShort(10));
         ISchema schema = new _Schema(expectedName, [], []);
-        Assert.Equal(
-            new MaterializedString(expectedName).Value,
-            new MaterializedString(schema.Name).Value
-        );
+        Assert.Equal(expectedName.TextValue, schema.Name.TextValue);
     }
 
     [Fact]

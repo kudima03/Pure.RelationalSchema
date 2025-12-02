@@ -1,6 +1,5 @@
 using Pure.Primitives.Abstractions.Bool;
 using Pure.Primitives.Bool;
-using Pure.Primitives.Materialized.Bool;
 using Pure.Primitives.Random.Bool;
 using Pure.RelationalSchema.Abstractions.Column;
 using Pure.RelationalSchema.Abstractions.Index;
@@ -17,10 +16,7 @@ public sealed record IndexTests
     {
         IBool uniqueness = new RandomBool();
         IIndex index = new _Index(uniqueness, []);
-        Assert.Equal(
-            new MaterializedBool(uniqueness).Value,
-            new MaterializedBool(index.IsUnique).Value
-        );
+        Assert.Equal(uniqueness.BoolValue, index.IsUnique.BoolValue);
     }
 
     [Fact]

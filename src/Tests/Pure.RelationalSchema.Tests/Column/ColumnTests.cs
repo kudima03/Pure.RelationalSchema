@@ -1,5 +1,4 @@
 using Pure.Primitives.Abstractions.String;
-using Pure.Primitives.Materialized.String;
 using Pure.Primitives.Number;
 using Pure.Primitives.Random.String;
 using Pure.RelationalSchema.Abstractions.Column;
@@ -25,10 +24,7 @@ public sealed record ColumnTests
     {
         IString expectedTypeName = new RandomString(new UShort(10));
         IColumn column = new _Column(expectedTypeName, new RandomColumnType());
-        Assert.Equal(
-            new MaterializedString(expectedTypeName).Value,
-            new MaterializedString(column.Name).Value
-        );
+        Assert.Equal(expectedTypeName.TextValue, column.Name.TextValue);
     }
 
     [Fact]
