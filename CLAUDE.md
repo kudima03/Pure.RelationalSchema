@@ -34,7 +34,7 @@ All records override `GetHashCode()` and `ToString()` to throw `NotSupportedExce
 
 **Multi-targeting:** net7.0, net8.0, net9.0, net10.0. All types must remain AOT-compatible (`IsAotCompatible = true`).
 
-**Package validation:** `EnablePackageValidation = true` with `PackageValidationBaselineVersion = 2.0.2`. Breaking API changes fail the build.
+**Package validation:** `EnablePackageValidation = true` with `PackageValidationBaselineVersion = 2.0.3`. Breaking API changes fail the build.
 
 **Publishing:** triggered by pushing a semver tag (e.g. `2.1.0`). The tag value becomes the `PackageVersion`.
 
