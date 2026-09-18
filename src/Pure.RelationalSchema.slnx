@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/Pure.RelationalSchema.Tests/Pure.RelationalSchema.Tests.csproj" />
+  </Folder>
+  <Project Path="Pure.RelationalSchema/Pure.RelationalSchema.csproj" />
+</Solution>
