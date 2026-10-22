@@ -6,6 +6,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.1.0] — 2026-10-22
+
+### Changed
+
+- Updated `Pure.Primitives` dependency from 3.6.5 to 3.7.0.
+- The NuGet package now includes `README.md`.
+- Assembly version is now derived from the release tag.
+- Releases are published to NuGet via trusted publishing.
+
 ## [2.0.3] — 2026-06-25
 
 - Maintenance release: dependency and build updates.
