@@ -53,6 +53,7 @@ All column types implement `IColumnType` and expose a string `Name` property.
 - .NET 8
 - .NET 9
 - .NET 10
+- .NET 11
 
 ## Installation
 
