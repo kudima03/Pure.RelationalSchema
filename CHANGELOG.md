@@ -6,6 +6,18 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [2.2.0] — 2026-11-11
+
+### Added
+
+- Added `net11.0` as a target framework.
+
+### Changed
+
+- Updated `Pure.Primitives` dependency from 3.7.0 to 3.8.0.
+- Updated `Pure.RelationalSchema.Abstractions` dependency from 1.2.0 to 1.3.0.
+- CI and the dev container now use the .NET 11 SDK.
+
 ## [2.1.0] — 2026-10-22
 
 ### Changed
