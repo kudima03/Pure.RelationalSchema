@@ -34,7 +34,7 @@ This is a **concrete implementation NuGet library**. Every public type is a `sea
 
 All records override `GetHashCode()` and `ToString()` to throw `NotSupportedException` — this is intentional.
 
-**Multi-targeting:** net7.0, net8.0, net9.0, net10.0. All types must remain AOT-compatible (`IsAotCompatible = true`).
+**Multi-targeting:** net7.0, net8.0, net9.0, net10.0, net11.0. All types must remain AOT-compatible (`IsAotCompatible = true`).
 
 **Package validation:** `EnablePackageValidation = true` with `PackageValidationBaselineVersion = 2.1.0`. Breaking API changes fail the build.
 
